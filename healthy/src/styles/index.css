@@ -4,32 +4,42 @@
 @tailwind utilities;
 
 @layer base {
-  html {
-    scroll-behavior: smooth;
-  }
-  
-  body {
+  html, body {
     margin: 0;
     padding: 0;
     height: 100vh;
     overflow: hidden;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
   }
+
+  #root {
+    height: 100vh;
+    overflow: hidden;
+  }
 }
 
-@layer components {
-  .btn-primary {
-    @apply bg-healthcare-primary hover:bg-healthcare-secondary text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-healthcare-primary focus:ring-offset-2;
+/* Mobile-specific styles */
+@media (max-width: 767px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
   
-  .input-field {
-    @apply w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-healthcare-primary;
+  /* Improve touch targets */
+  button, [role="button"] {
+    min-height: 44px;
+    min-width: 44px;
   }
+}
+
+/* Ensure proper flexbox scrolling */
+.min-h-0 {
+  min-height: 0;
 }
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 4px;
 }
 
 ::-webkit-scrollbar-track {
@@ -67,9 +77,4 @@
 
 .message-bubble {
   animation: slideIn 0.3s ease-out;
-}
-
-/* Ensure no scrolling on body */
-body {
-  overflow: hidden;
 }
