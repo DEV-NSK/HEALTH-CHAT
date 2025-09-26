@@ -63,6 +63,24 @@
   background: rgb(107 114 128);
 }
 
+.min-h-0 {
+  min-height: 0;
+}
+
+.h-full {
+  height: 100%;
+}
+
+.flex-1 {
+  flex: 1 1 0%;
+}
+
+/* Ensure no overflow on body */
+html, body, #root {
+  height: 100vh;
+  overflow: hidden;
+}
+
 /* Animation for message bubbles */
 @keyframes slideIn {
   from {

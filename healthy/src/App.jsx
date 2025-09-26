@@ -1,83 +1,17 @@
-// // src/App.jsx
-// import React from "react";
-// import { ThemeProvider } from "./contexts/ThemeContext";
-// import { AppProvider } from "./contexts/AppContext";
-// import SearchBar from "./components/SearchBar";
-// import DocumentUpload from "./components/DocumentUpload";
-// import DocumentList from "./components/DocumentList";
-// import ChatInterface from "./components/ChatInterface";
-// import ThemeToggle from "./components/ThemeToggle";
-// import "./styles/index.css";
-
-// function App() {
-//   return (
-//     <ThemeProvider>
-//       <AppProvider>
-//         <div className="h-screen bg-gray-50 dark:bg-gray-900 transition-colors duration-200 overflow-hidden">
-//           <div className="container mx-auto px-4 py-4 h-full">
-//             {/* Header */}
-//             <div className="flex justify-between items-center mb-4">
-//               <h1 className="text-2xl font-bold text-healthcare-primary dark:text-healthcare-secondary">
-//                 Healthcare Document Assistant
-//               </h1>
-//               <ThemeToggle />
-//             </div>
-
-//             {/* Search Bar */}
-//             <SearchBar />
-
-//             {/* Main Content Grid - Fixed height */}
-//             <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 h-[calc(100vh-140px)]">
-//               {/* Left Sidebar - Document Management */}
-//               <div className="lg:col-span-1 flex flex-col space-y-4 h-full">
-//                 <div className="flex-1 min-h-0">
-//                   <DocumentUpload />
-//                 </div>
-//                 <div className="flex-1 min-h-0">
-//                   <DocumentList />
-//                 </div>
-//               </div>
-
-//               {/* Right Side - Chat Interface */}
-//               <div className="lg:col-span-2 h-full flex flex-col min-h-0">
-//                 <ChatInterface />
-//               </div>
-//             </div>
-//           </div>
-//         </div>
-//       </AppProvider>
-//     </ThemeProvider>
-//   );
-// }
-
-// export default App;
-
-
-
-
-
-
-
-
-
-
-
-
-
 // src/App.jsx
-import React, { useState } from 'react';
-import { ThemeProvider } from './contexts/ThemeContext';
-import { AppProvider } from './contexts/AppContext';
-import SearchBar from './components/SearchBar';
-import DocumentUpload from './components/DocumentUpload';
-import DocumentList from './components/DocumentList';
-import ChatInterface from './components/ChatInterface';
-import ThemeToggle from './components/ThemeToggle';
-import { FiMenu, FiX, FiMessageSquare, FiFileText } from 'react-icons/fi';
-import './styles/index.css';
+import React, { useState } from "react";
+import { ThemeProvider } from "./contexts/ThemeContext";
+import { AppProvider } from "./contexts/AppContext";
+import SearchBar from "./components/SearchBar";
+import DocumentUpload from "./components/DocumentUpload";
+import DocumentList from "./components/DocumentList";
+import ChatInterface from "./components/ChatInterface";
+import ThemeToggle from "./components/ThemeToggle";
+import { FiMenu, FiX, FiMessageSquare, FiFileText } from "react-icons/fi";
+import "./styles/index.css";
 
 function App() {
-  const [activeView, setActiveView] = useState('chat'); // 'chat' or 'documents'
+  const [activeView, setActiveView] = useState("chat"); // 'chat' or 'documents'
   const [showMobileMenu, setShowMobileMenu] = useState(false);
 
   return (
@@ -98,7 +32,11 @@ function App() {
                     onClick={() => setShowMobileMenu(!showMobileMenu)}
                     className="p-2 rounded-lg bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600"
                   >
-                    {showMobileMenu ? <FiX className="w-4 h-4" /> : <FiMenu className="w-4 h-4" />}
+                    {showMobileMenu ? (
+                      <FiX className="w-4 h-4" />
+                    ) : (
+                      <FiMenu className="w-4 h-4" />
+                    )}
                   </button>
                 </div>
               </div>
@@ -110,7 +48,7 @@ function App() {
                 </h1>
                 <ThemeToggle />
               </div>
-              
+
               {/* Search Bar */}
               <SearchBar />
             </div>
@@ -120,22 +58,22 @@ function App() {
           <div className="lg:hidden flex-shrink-0 border-b border-gray-200 dark:border-gray-700">
             <div className="flex">
               <button
-                onClick={() => setActiveView('chat')}
+                onClick={() => setActiveView("chat")}
                 className={`flex-1 flex items-center justify-center py-3 space-x-2 transition-colors duration-200 ${
-                  activeView === 'chat'
-                    ? 'bg-healthcare-primary text-white'
-                    : 'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300'
+                  activeView === "chat"
+                    ? "bg-healthcare-primary text-white"
+                    : "bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300"
                 }`}
               >
                 <FiMessageSquare className="w-4 h-4" />
                 <span>Chat</span>
               </button>
               <button
-                onClick={() => setActiveView('documents')}
+                onClick={() => setActiveView("documents")}
                 className={`flex-1 flex items-center justify-center py-3 space-x-2 transition-colors duration-200 ${
-                  activeView === 'documents'
-                    ? 'bg-healthcare-primary text-white'
-                    : 'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300'
+                  activeView === "documents"
+                    ? "bg-healthcare-primary text-white"
+                    : "bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300"
                 }`}
               >
                 <FiFileText className="w-4 h-4" />
@@ -162,7 +100,7 @@ function App() {
                     </div>
 
                     {/* Right Side - Chat Interface */}
-                    <div className="lg:col-span-2 h-full">
+                    <div className="lg:col-span-2 h-full flex flex-col min-h-0">
                       <ChatInterface />
                     </div>
                   </div>
@@ -171,7 +109,7 @@ function App() {
 
               {/* Mobile Layout */}
               <div className="lg:hidden h-full">
-                {activeView === 'chat' ? (
+                {activeView === "chat" ? (
                   <div className="h-full">
                     <ChatInterface />
                   </div>
