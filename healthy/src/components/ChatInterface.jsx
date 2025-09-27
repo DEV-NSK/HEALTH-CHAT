@@ -663,7 +663,7 @@ const ChatInterface = () => {
       </div>
 
       {/* Input Area - Fixed at bottom */}
-      <div className="border-t border-gray-200 dark:border-gray-600 p-4 flex-shrink-0">
+      <div className="border-t border-gray-200 dark:border-gray-600 p-2 flex-shrink-0">
         <div className="flex space-x-2">
           <div className="flex-1 relative">
             <textarea

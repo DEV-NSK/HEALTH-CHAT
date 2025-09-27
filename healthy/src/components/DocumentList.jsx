@@ -878,8 +878,8 @@ const DocumentList = () => {
 
         {documents.length === 0 ? (
           <div className="flex-1 flex flex-col items-center justify-center text-gray-500 dark:text-gray-400 p-4">
-            <FiFile className="w-16 h-16 mx-auto mb-4 opacity-30" />
-            <p className="text-lg font-medium mb-2">No documents uploaded</p>
+            <FiFile className="w-16 h-12 mx-auto mb-1 opacity-30" />
+            <p className="text-lg font-medium mb-0">No documents uploaded</p>
             <p className="text-sm text-center">Upload PDF, DOCX, or TXT files to start chatting about your healthcare documents</p>
           </div>
         ) : (
