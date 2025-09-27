@@ -96,3 +96,57 @@ html, body, #root {
 .message-bubble {
   animation: slideIn 0.3s ease-out;
 }
+
+
+
+
+/* Modal styles */
+.fixed {
+  position: fixed;
+}
+
+.inset-0 {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.z-50 {
+  z-index: 50;
+}
+
+.max-h-\[90vh\] {
+  max-height: 90vh;
+}
+
+
+
+
+/* Add to your index.css for PDF viewer */
+.react-pdf__Page {
+  display: inline-block;
+}
+
+.react-pdf__Page__canvas {
+  max-width: 100%;
+  height: auto;
+}
+
+.react-pdf__Page__textContent {
+  border: 1px solid darkgrey;
+  box-shadow: 5px 5px 5px 1px #ccc;
+  border-radius: 5px;
+}
+
+.react-pdf__Page__annotations {
+  height: 0;
+}
+
+.react-pdf__Page__annotationLayer {
+  padding: 20px;
+}
+
+.react-pdf__Document {
+  line-height: 0;
+}
